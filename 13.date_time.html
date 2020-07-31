@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Dates</title>
+</head>
+<style>
+    .container {
+        font-size: 23px;
+        color: white;
+        background-color: rgb(15, 71, 145);
+        border: 2px solid grey;
+        padding: 34px;
+        margin: 4px;
+        text-align: center;
+    }
+
+    #time {
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="container">
+        Current time is <span id="time"></span>
+    </div>
+    <script>
+
+        // Date: JavaScript stores dates as number of milliseconds since January 01, 1970, 00:00:00 UTC
+        // four ways to create a new date object
+        // 1. new Date() creates a new date object with the current date and time. Date objects are static. The computer time is ticking, but date objects are not.
+
+        // 2. new Date(year, month, day, hours, minutes, seconds, milliseconds) creates a new date object with a specified date and time. JavaScript counts months from 0 to 11. January is 0. December is 11. If you supply only one parameter it will be treated as milliseconds.
+
+        // 3. new Date(milliseconds) creates a new date object as 01 January 1970 plus milliseconds.
+
+        // 4. new Date(date string)  creates a new date object from a date string
+
+        let now = new Date();
+        console.log(now);
+
+        // 01 January 1970 plus 1sec
+        let dt = new Date(1000);
+        console.log(dt);
+
+        let newDate = new Date("2029-09-30");
+        console.log("The newDate is", newDate)
+
+        // valid syntax
+        // let newDate1 = new Date(year, month, date, hours, minutes, seconds, milliseconds);
+        // let newDate1 = new Date(year, month, date, hours, minutes, seconds);
+        // let newDate1 = new Date(year, month, date, hours, minutes);
+        // let newDate1 = new Date(year, month, date, hours);
+        // let newDate1 = new Date(year, month, date);
+        // let newDate1 = new Date(year, month);
+        let newDate1 = new Date(3020, 4, 6, 9, 3, 2, 34);
+        console.log(newDate1);
+
+        // date methods
+
+        // 1. get date methods and 2. set date methods
+        // getFullYear(): Get the year as a four digit number (yyyy)
+        let yr = newDate.getFullYear();
+        console.log("The year is ", yr);
+
+        // getDate(): Get the day as a number (1-31)
+        let dat = newDate.getDate();
+        console.log("The date is ", dat);
+
+        // getMonth(): Get the month as a number (0-11)
+        let month = newDate.getMonth();
+        console.log("The month is ", month);
+
+        // getHours(): Get the hour (0-23)
+        let hours = newDate.getHours();
+        console.log("The hours is ", hours);
+        // getMinutes() method returns the minutes of a date as a number (0-59)
+        // getSeconds() method returns the seconds of a date as a number (0-59)
+        // getMilliseconds() method returns the milliseconds of a date as a number (0-999)
+        // getDay() method returns the weekday of a date as a number (0-6). In JavaScript, the first day of the week (0) means "Sunday"
+
+        // setDate() method sets the day of a date object (1-31)
+        newDate.setDate(8);
+
+        // setMinutes() method sets the minutes of a date object (0-59)
+        newDate.setMinutes(29);
+        console.log(newDate)
+
+        // setSeconds() method sets the seconds of a date object (0-59)
+        // setFullYear() method sets the year of a date object and can optionally set month and day
+        // setMonth() method sets the month of a date object (0-11).
+
+        // setinterval for every 1sec
+        setInterval(updateTime, 1000);
+
+        // fuction to update time in html document
+        function updateTime() {
+            time.innerHTML = new Date().toString();
+        }
+
+        // Date.now() returns the milliseconds from the 01 January 1970
+        console.log(Date.now())
+    </script>
+</body>
+
+</html>
