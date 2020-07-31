@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays and Objects</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+
+        // primitive data type
+        let myVar = 34;
+        let myVar2 = "string";
+        let myVar3 = true;
+        let myVar4 = null;
+        let myVar5 = undefined;
+
+        // object creation in js
+        let employee = {
+            name: "Shailesh",//key value pairs
+            roll: 18211,
+            age: 100,
+            "channel 1": "shaileshnit",
+        }
+        console.log(employee);
+        console.log(employee.age)
+        console.log(employee["channel 1"])
+
+        // array is a special type of object
+        let arr = [1, 2, 4, "Shailesh", undefined];
+        console.log(arr)
+
+        // another way to declare an array
+        let arr2 = new Array(41, 2, 4, "Shailesh", undefined);
+        console.log(arr2)
+
+        //insert an element  
+        arr.push("this is pushed");
+        console.log(arr)
+
+        // sort funtion to sort the array
+        arr = arr.sort();
+        console.log(arr);
+
+        // length of the array
+        console.log(arr.length);
+
+        // array with 10 elements with undefined values
+        let arr3 = new Array(23)
+        
+    </script>
+</body>
+</html>

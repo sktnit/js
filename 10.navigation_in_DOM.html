@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Navigation in DOM</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <ul id="nav">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>More About Us</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+    <div class="container">
+        Another Container
+    </div>
+    <script>
+        // get Element by using ID
+        let main = document.getElementById('main');
+        console.log(main);
+        console.log(main.innerHTML)// print the html in main as a string
+
+        let nav = document.getElementById('nav');
+        console.log(nav);
+        // nav.innerHTML="<li>Dynamic elements</li>"// change the inner html in nav id
+        // console.log(nav)
+
+        // get elements by class name 
+        let containers = document.getElementsByClassName('container');
+        console.log(containers);
+        console.log(containers[0])
+        console.log(containers[1])
+
+        // query selector that matches a specified CSS selector(s) in the document and return first element that matches the specified selectors.
+        let sel = document.querySelector('#nav>li');
+        console.log("Selector returns ", sel)
+
+        // queryselectorall that matches a specified CSS selector(s) in the document and return all elements that matches the specified selectors.
+        sel = document.querySelectorAll('#nav>li');
+        console.log("Selector returns ", sel)
+
+        //We can change the inner html using queryselectorall
+        sel[2].innerHTML="<li>Dynamic elements</li>"
+        console.log(sel)
+
+    </script>
+</body>
+</html>
